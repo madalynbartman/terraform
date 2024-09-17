@@ -1,7 +1,7 @@
 locals {
   # project details
   project = {
-    project_id       = "adept-presence-396401"
+    project_id       = "kube-372422"
     region           = "us-central1"
     network_name     = "madalyn-test-network"
   }
