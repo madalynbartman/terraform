@@ -32,9 +32,9 @@ resource "google_compute_subnetwork" "madalyn-gke" {
 
 }
 
-resource "google_service_account" "terraform-cloud-sa" {
-  account_id   = "terraform-cloud-sa"
-  display_name = "terraform-cloud-sa"
+resource "google_service_account" "sa-madalyn-test" {
+  account_id   = "sa-madalyn-test"
+  display_name = "sa-madalyn-test"
 }
 
 resource "google_project_service" "gcp_resource_manager_api" {
@@ -63,7 +63,7 @@ module "madalyn-gke" {
   ip_range_pods          = google_compute_subnetwork.madalyn-gke.secondary_ip_range.0.range_name
   ip_range_services      = google_compute_subnetwork.madalyn-gke.secondary_ip_range.1.range_name
 
-  service_account                 = google_service_account.terraform-cloud-sa.email
+  service_account                 = google_service_account.sa-madalyn-test.email
   master_authorized_networks      = local.madalyn_cluster.master_authorized_networks
   master_global_access_enabled    = false
   istio                           = false
