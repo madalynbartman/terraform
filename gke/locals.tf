@@ -9,7 +9,7 @@ locals {
   # cluster details
   madalyn_cluster = {
     cluster_name                = "madalyn-gke"
-    cluster_version             = "1.27.5-gke.200"
+    cluster_version             = "latest"
     release_channel             = "UNSPECIFIED" # in order to disable auto upgrade
     subnet_name                 = "madalyn-gke"
     subnet_range                = "10.254.71.0/24"
